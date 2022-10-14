@@ -119,7 +119,10 @@ Status Code: ${notarizationInfo.statusCode || 'No Code'}
 Message: ${notarizationInfo.statusMessage || 'No Message'}
 Logs: ${notarizationInfo.logFileUrl}`);
   }
-
+  console.log('- - - - - - - - - - - - - - - - ');
+  console.log('Full notarization response: ');
+  console.log(JSON.stringify(notarizationInfo));
+  console.log('- - - - - - - - - - - - - - - - ');
   if (notarizationInfo.status !== 'success') {
     throw new Error(`Unrecognized notarization status: "${notarizationInfo.status}"`);
   }
